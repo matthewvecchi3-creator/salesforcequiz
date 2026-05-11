@@ -1,9 +1,0 @@
-{
-  "name": "MV's Upskilling - Salesforce",
-  "short_name": "Salesforce Quiz",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#f7f7fb",
-  "theme_color": "#1f2937",
-  "icons": []
-}
