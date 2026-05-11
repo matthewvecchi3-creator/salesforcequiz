@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1f2937" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>MV's Upskilling - Salesforce</title>
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">100-question multiple-choice Salesforce practice app</p>
+      <h1 id="appTitle">MV's Upskilling - Salesforce</h1>
+      <p class="subhead">Build practical Salesforce fluency through randomized multiple-choice practice across CRM fundamentals, data model, security, Sales Cloud, reports, automation, data management, and business scenarios.</p>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="statsGrid" aria-label="Progress statistics">
+      <div class="stat"><span>Answered</span><strong id="answeredStat">0 / 100</strong></div>
+      <div class="stat"><span>Score</span><strong id="scoreStat">0%</strong></div>
+      <div class="stat"><span>Correct</span><strong id="correctStat">0</strong></div>
+      <div class="stat"><span>Remaining</span><strong id="remainingStat">100</strong></div>
+    </section>
+
+    <section class="card">
+      <div class="progressHeader">
+        <strong>Overall progress</strong>
+        <span id="progressText">0 of 100 questions answered</span>
+      </div>
+      <div class="progressBar"><div id="progressFill"></div></div>
+      <div id="completionStatus" class="status">Certificate unlocks after all 100 questions are answered with a final score over 70%.</div>
+    </section>
+
+    <section class="card controls">
+      <div id="moduleFilters" class="chips"></div>
+      <div class="buttonRow">
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="nextUnanswered()">Next Unanswered</button>
+        <button id="reviewBtn" onclick="toggleReview()">Review Missed</button>
+        <button class="danger" onclick="resetProgress()">Reset</button>
+      </div>
+    </section>
+
+    <section id="questionPanel" class="card questionCard"></section>
+
+    <section id="certificateSection" class="certificate hidden">
+      <div class="certificateInner">
+        <p class="eyebrow">Certificate of Completion</p>
+        <h2 id="certName">MV's Upskilling - Salesforce</h2>
+        <p>This certifies completion of the 100-question Salesforce upskilling quiz with a final score of <strong id="certScore">0%</strong>.</p>
+        <div class="skills">
+          <h3>Skills demonstrated</h3>
+          <ul>
+            <li>Salesforce CRM fundamentals and navigation</li>
+            <li>Objects, fields, records, relationships, and data modeling</li>
+            <li>Profiles, permission sets, sharing, and field-level security</li>
+            <li>Sales Cloud pipeline, leads, accounts, contacts, and opportunities</li>
+            <li>Reports, dashboards, filters, report types, and business metrics</li>
+            <li>Flow, validation rules, and process automation concepts</li>
+            <li>Data import, export, quality, deduplication, and bulk updates</li>
+            <li>Business scenario diagnosis using Salesforce data and configuration</li>
+          </ul>
+        </div>
+        <p class="certDate">Completed on <span id="certDate"></span></p>
+        <button class="primary" onclick="printCertificate()">Print / Save PDF</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Progress is saved locally in this browser. Use the same device/browser to keep your score.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
